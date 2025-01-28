@@ -12,7 +12,7 @@ srcdir = os.path.abspath(os.path.dirname(__file__))
 class App:
     @cherrypy.expose
     def index(self):
-        return page_test.get()
+        return page_index.get()
 
 app = App()
 cherrypy.quickstart(
