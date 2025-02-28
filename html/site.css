@@ -1,6 +1,82 @@
-div.header{
-    background: yellow;
+/* Some formatting referenced from https://www.w3schools.com/html/html_examples.asp */
+
+body {
+    background: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.header {
+    background: blue;
     color: yellow;
+    text-align: right;
     font-weight:bolder;
     font-size:x-large;
+}
+
+div.postfeed {
+    /* Referenced from dialogbox.html */
+    border: 2px double black;
+    background: lightgoldenrodyellow;
+    padding-top: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+
+    /* center the div vertically and horizontally
+       ref: https://stackoverflow.com/a/13356401 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    /* set size of dialog */
+    width: 40vw;
+    height: 40vh;
+
+    text-align: center;
+    overflow: auto;
+
+    /* offset x, offset y, blur radius, color*/
+    /* box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5); */
+
+    z-index: 10;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+  }
+
+img.pfp {
+    height:64px; 
+    width:64px;
+    float: left;
+}
+
+div.postcontent {
+    padding-left: 5em;
+}
+
+div.numviews {
+    color: darkslategray;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+div.dateposted {
+    color: slategray;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+
+/* Nth child referenced from https://stackoverflow.com/a/3084318 */
+tr:nth-child(even) {
+    background-color: aquamarine;
+}
+
+tr:nth-child(odd) {
+    background-color: aqua;
 }
