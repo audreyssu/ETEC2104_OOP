@@ -4,7 +4,7 @@ function checkUserInfo() {
     var userName = document.getElementById("name").value;
 
     if (!userName) {
-        alert("Error: Enter a name");
+        displayinvalid("Error: Enter a name");
         return;
     }
 
@@ -12,8 +12,8 @@ function checkUserInfo() {
     // Email validation referenced from https://www.geeksforgeeks.org/javascript-program-to-validate-an-email-address/
     var userEmail = document.getElementById("email").value;
 
-    if (!valid(userEmail)) {
-        alert("Error: Enter a valid email address");
+    if (!checkvalid(userEmail)) {
+        displayinvalid("Error: Enter a valid email address");
         return;
     }
 
@@ -22,7 +22,7 @@ function checkUserInfo() {
     var userPword = document.getElementById("pword").value;
 
     if (!userPword) {
-        alert("Error: Enter a password");
+        displayinvalid("Error: Enter a password");
         return;
     }
 
@@ -37,20 +37,57 @@ function checkUserInfo() {
     let userAge = today.getTime() - userBdayDate.getTime(); // Calculate age in ms
 
     if (!userAge) {
-        alert("Error: Enter a birthday")
+        displayinvalid("Error: Enter a birthday");
         return
     }
     else if (userAge < ageReq) {
-        alert("Error: You are too young to sign up for an account!");
+        displayinvalid("Error: You are too young to sign up for an account!");
         return;
     } 
     else {
-        alert("You have successfully signed up!");
+        displaysuccess("You have successfully signed up!");
     }
 }
 
-
-function valid(email) {
+function checkvalid(email) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
+}
+
+function displayinvalid(message) {
+    try {   // remove any potentially leftover warning or success banners
+        removeElementsByClass("warning");
+        removeElementsByClass("success");
+    }
+    finally {
+    let outputError = document.createElement("div");
+    outputError.classList.add("warning");
+
+    outputError.innerText=message
+
+    document.body.prepend(outputError);
+    }
+}
+
+function displaysuccess(message) {
+    try {   // remove any potentially leftover warning or success banners
+        removeElementsByClass("warning");
+        removeElementsByClass("success");
+    }
+    finally {
+    let outputError = document.createElement("div");
+    outputError.classList.add("success");
+
+    outputError.innerText=message
+
+    document.body.prepend(outputError);
+    }
+}
+
+// Function taken from https://stackoverflow.com/a/14066534
+function removeElementsByClass(className){
+    const elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
 }

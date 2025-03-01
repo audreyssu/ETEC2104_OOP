@@ -5,6 +5,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+div.warning {
+    background: red;
+    color: black;
+    text-align: center;
+}
+
+div.success {
+    background: green;
+    color: black;
+    text-align: center;
+}
+
 div.header {
     background: blue;
     color: yellow;
