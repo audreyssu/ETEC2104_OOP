@@ -3,11 +3,12 @@
 
     <head>
         <link rel="stylesheet" href="/../html/site.css">
+        <script src="/html/signup.js"></script>
         <title>Sign up</title>
     </head>
 
     <body>
-        <div class="dialog">
+        <div class="signup">
             <label for="name">Full name</label><br>
             <input size=10, id="name"></input><br>
 
@@ -20,7 +21,7 @@
             <label for="bday">Date of birth</label><br>
             <input size=10, type="date", id="bday"></input><br>
 
-            <input type="button" value="Sign up"><br>
+            <input type="button" onclick="checkUserInfo()" value="Sign up"><br>
         </div>
     
     </html>

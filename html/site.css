@@ -44,6 +44,16 @@ div.postfeed {
     z-index: 10;
 }
 
+div.signup {
+    background-color: aquamarine;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    text-align: center;
+    padding: 100px;
+    box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5);
+}
+
 table, th, td {
     border: 1px solid black;
     text-align: left;
